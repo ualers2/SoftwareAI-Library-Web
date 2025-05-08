@@ -1,0 +1,17 @@
+{
+    "id": "code-review-front-end-js-agent",
+    "type_plan": "premium",
+    "name": "Code Review Front End JS Agent",
+    "tools": ["autosave", "autogetlocalfilecontent"],
+    "model": "o3-mini",
+    "instruction_property": {
+        "doc_md": "/app/LocalProject/doc_md",
+        "path_js": "/app/LocalProject/static/js"
+    },
+    "instruction_path": "instruction.md",
+    "tutorial_path": "tutorial.md",
+    "icon": "fas fa-code text-xl",
+    "shortDescription": "Validates and refactors core frontend checkout and navigation files.",
+    "fullDescription": "This agent ensures that critical frontend JavaScript files—such as checkout-payment-button.js, checkout-payment-selected.js, landing.js, loginAndRegistrer.js, and navigation.js—are properly validated against predefined base logic. If inconsistencies are found, it refactors and saves the corrected versions automatically.",
+    "UseCases": "• Validate core checkout and navigation frontend files.\n• Automatically refactor missing or incorrect logic.\n• Ensure frontend code consistency before deployment."
+}

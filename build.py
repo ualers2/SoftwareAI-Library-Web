@@ -2,7 +2,7 @@ import subprocess
 import os
 
 os.chdir(os.path.join(os.path.dirname(__file__)))
-# Adiciona o caminho do Docker Compose
+
 os.environ["PATH"] += r";C:\Program Files\Docker\Docker\resources\bin"
 
 def executar_comando(comando):

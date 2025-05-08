@@ -10,15 +10,15 @@ def executar_comando(comando):
     subprocess.run(comando, shell=True)
 
 
-# executar_comando("docker-compose up --build")
+executar_comando("docker-compose up --build")
 
-executar_comando("docker-compose build library_agents_watcher")
+# executar_comando("docker-compose build library_agents_watcher")
 
-executar_comando("docker-compose up -d library_agents_watcher")
+# executar_comando("docker-compose up -d library_agents_watcher")
 
-executar_comando("docker-compose build library_tools_watcher")
+# executar_comando("docker-compose build library_tools_watcher")
 
-executar_comando("docker-compose up -d library_tools_watcher")
+# executar_comando("docker-compose up -d library_tools_watcher")
 
 # executar_comando("docker-compose build agent_library_hub")
 

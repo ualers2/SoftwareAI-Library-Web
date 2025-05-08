@@ -20,7 +20,6 @@ from modules.register_tool_version import *
 from modules.calculate_agent_hash import calculate_agent_hash
 from modules.register_agent_version import register_agent_version
 
-
 app = Flask(__name__, static_folder='static', template_folder='templates')
 CORS(app)  # Isso permite CORS para todas as rotas
 app.secret_key = 'sua_chave_secreta' 

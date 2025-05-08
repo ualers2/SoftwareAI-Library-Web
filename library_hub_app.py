@@ -1,5 +1,3 @@
-
-
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, make_response, Response
 from flask_cors import CORS
 from datetime import timedelta

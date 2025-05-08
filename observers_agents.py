@@ -9,8 +9,6 @@ from watchdog.events import FileSystemEventHandler
 from firebase_admin import credentials, initialize_app, db
 from modules.calculate_agent_hash import calculate_agent_hash
 from modules.register_agent_version import register_agent_version
-
-
 load_dotenv(dotenv_path="Keys/keys.env")
 
 BASE_DIR = os.path.join(os.path.dirname(__file__), 'Agents') 

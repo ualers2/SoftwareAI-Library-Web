@@ -15,7 +15,6 @@ load_dotenv(dotenv_path="Keys/keys.env")
 
 BASE_DIR = os.path.join(os.path.dirname(__file__), 'Agents') 
 
-# Caminho para credenciais Firebase
 env_path = os.getenv('FIREBASE_CREDENTIALS', '/app/Keys/appcompany.json')
 firebase_URL = os.getenv('FIREBASE_URL')
 with open(env_path) as f:

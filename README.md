@@ -1,5 +1,6 @@
 **SoftwareAI Library Web**
 Aplicação web construída em Flask que funciona como hub para gerenciar e expor agents e tools da biblioteca SoftwareAI.
+![Screenshot_7](https://github.com/user-attachments/assets/d31b9c11-64f7-40a3-9d70-29b523c54562)
 
 ---
 

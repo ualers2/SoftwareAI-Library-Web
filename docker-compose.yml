@@ -7,9 +7,6 @@ services:
     restart: always
     ports:
       - "821:821"
-    volumes:
-      - .:/app
-      - /var/run/docker.sock:/var/run/docker.sock  # <-- Acesso ao Docker
     command: > 
       sh -c "python library_hub_app.py"
     mem_limit: 900MB
@@ -23,8 +20,6 @@ services:
     restart: always
     ports:
       - "4000:4000"
-    volumes:
-      - .:/app
     working_dir: /app
     command: >
       sh -c "python webhook.py"
@@ -39,9 +34,6 @@ services:
     restart: always
     ports:
       - "825:825"
-    volumes:
-      - .:/app
-      - /var/run/docker.sock:/var/run/docker.sock  
     command: > 
       sh -c "python observers_tools.py"
     mem_limit: 500MB
@@ -55,9 +47,6 @@ services:
     restart: always
     ports:
       - "826:826"
-    volumes:
-      - .:/app
-      - /var/run/docker.sock:/var/run/docker.sock  
     command: > 
       sh -c "python observers_agents.py"
     mem_limit: 500MB

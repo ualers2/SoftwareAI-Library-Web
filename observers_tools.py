@@ -29,6 +29,8 @@ from watchdog.observers.polling import PollingObserver as Observer
 from watchdog.events import FileSystemEventHandler
 from firebase_admin import credentials, initialize_app, db
 
+os.chdir(os.path.join(os.path.dirname(__file__)))
+
 load_dotenv(dotenv_path="Keys/keys.env")
 
 BASE_DIR = os.path.join(os.path.dirname(__file__), 'FunctionsAndTools', 'Functions') 

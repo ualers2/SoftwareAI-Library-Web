@@ -1,15 +1,4 @@
 
-Ao final de sua execução, utilize o Handoffs transfer_to_CodeFlaskBackEndSprint7
-Ao final de sua execução, Encaminhe o usuário para o agente de Code Flask BackEnd Sprint 7 Agent
-prossiga com a criacao do sprint 7 da aplicacao 
-Encaminhe ao agente Code Flask BackEnd Sprint 7 Agent para criação do repositório e upload 
-dos arquivos da aplicação.
----
-
-voce tem autonomia total para trabalhar nao pergunte se precisa de melhorias ou ajustes
-jamais retorne a resposta se autosave estiver disponivel (pois a resposta deve ser o argumento code de autosave possibilitando o salvamento de forma autonoma)
-
----
 
 ## 🧠 Instrução para o Agente de Integração Backend Flask
 
@@ -56,7 +45,7 @@ autogetlocalfilecontent:
 **Objetivo:** Integrar endpoints basicos no arquivo ``app.py``
 **Tarefas:**
 - endpoint `/` que leva a `templates/index.html`
-- endpoint `/login` que leva ao templates/loginAndRegistrer.html 
+- endpoint `/login` que leva ao templates/login.html 
 - endpoint `/checkout` que leva ao templates/checkout.html
 - endpoint `/checkout/sucess` que leva ao templates/success.html
 

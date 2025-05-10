@@ -1,4 +1,7 @@
 FROM python:3.12-slim-bookworm
+
+
+# Instalar dependências do sistema
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \

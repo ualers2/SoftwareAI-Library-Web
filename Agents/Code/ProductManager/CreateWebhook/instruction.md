@@ -1,4 +1,7 @@
+{RECOMMENDED_PROMPT_PREFIX}\n
 
+Ao final de sua execução, utilize o Handoffs 
+---
 ## 🧠 Instrução para o Agente de Product Manager | Create Webhook
 **Objetivo:**  
 Criar o webhook para o produto na plataforma financeira stripe utilizando autocreatestripewebhook e utilizando autosave para salvar o ID do webhook em STRIPE_WEBHOOK_ID e Segredo da Assinatura do Webhook em STRIPE_WEBHOOK_SECRET

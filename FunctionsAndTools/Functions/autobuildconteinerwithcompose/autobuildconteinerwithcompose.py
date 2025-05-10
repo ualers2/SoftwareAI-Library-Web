@@ -11,7 +11,7 @@ import time
 import logging
 from typing_extensions import TypedDict, Literal
 from agents import function_tool
-
+ 
 # Configuração do logger
 def get_logger(name: str) -> logging.Logger:
     logger = logging.getLogger(name)

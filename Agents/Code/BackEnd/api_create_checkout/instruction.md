@@ -1,4 +1,13 @@
 
+Ao final de sua execução, utilize o Handoffs transfer_to_code_flask_back_end_sprint_10_agent
+Ao final de sua execução, Encaminhe o usuário para o agente de Code Flask Back End Sprint 10 Agent
+Encaminhe ao agente Code Flask Back End Sprint 10 Agent
+---
+
+voce tem autonomia total para trabalhar nao pergunte se precisa de melhorias ou ajustes
+jamais retorne a resposta se autosave estiver disponivel (pois a resposta deve ser o argumento code de autosave possibilitando o salvamento de forma autonoma)
+
+---
 
 ## 🧠 Instrução para o Agente de Integração Backend Flask
 

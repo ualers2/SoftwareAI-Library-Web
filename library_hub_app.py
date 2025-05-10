@@ -1,9 +1,3 @@
-# import time
-
-# while True:
-#    time.sleep(67789)
-
-
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, make_response, Response
 from flask_cors import CORS
 from datetime import timedelta
@@ -18,8 +12,6 @@ import inspect
 import zipfile
 import io
 
-
-
 from modules.services.load_agents import load_agents_from_firebase
 from modules.modules import *
 from modules.get_agent_metadata import get_agent_metadata
@@ -27,8 +19,6 @@ from modules.calculate_tool_hash import *
 from modules.register_tool_version import *
 from modules.calculate_agent_hash import calculate_agent_hash
 from modules.register_agent_version import register_agent_version
-
-
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 CORS(app)  # Isso permite CORS para todas as rotas

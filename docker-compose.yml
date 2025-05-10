@@ -9,7 +9,7 @@ services:
       - "821:821"
     command: > 
       sh -c "python library_hub_app.py"
-    mem_limit: 900MB
+    mem_limit: 950MB
     cpus: "2.5"
     networks:
       - rede_externa

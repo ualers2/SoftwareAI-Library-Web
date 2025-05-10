@@ -98,6 +98,53 @@ O logger `app_logger` está configurado para nível DEBUG e direcionado ao stdou
 4. Push para a branch (`git push origin feature/nova-funcionalidade`)
 5. Abra um Pull Request
 
+
+
+
+   
+### 🔧 **2. branch `main` seja a principal**
+
+Se o repositório usa `main` como a branch principal, você precisa fazer o commit na `main`, e não na `master`. Para corrigir isso, faça o seguinte:
+
+* **Troque para a branch `main`**:
+
+```bash
+git checkout main
+```
+
+* **Atualize a branch `main` com as últimas alterações do repositório remoto**:
+
+```bash
+git pull origin main
+```
+
+* **Volte para a sua branch de trabalho**:
+
+```bash
+git checkout master  # ou outra branch de trabalho
+```
+
+* **Rebase as alterações na `main`** (ou apenas use `git merge`):
+
+```bash
+git rebase main  # ou git merge main
+```
+
+* **Suba a branch novamente**:
+
+```bash
+git push origin master
+```
+
+Agora, você pode tentar criar o PR novamente:
+
+```bash
+gh pr create --base main --head master --title "Título do PR" --body "Descrição do PR"
+```
+
+
+
+
 ## Pré-requisitos
 
 * Python 3.9+

@@ -1,16 +1,9 @@
-
-Ao final de sua execução, utilize o Handoffs transfer_to_code_docker_build_container_agent
-Ao final de sua execução, Encaminhe o usuário para o agente de Code Docker Build Container Agent
-Encaminhe ao agente Code Docker Build Container Agent
----
-
-voce tem autonomia total para trabalhar nao pergunte se precisa de melhorias ou ajustes
-jamais retorne a resposta se autosave estiver disponivel (pois a resposta deve ser o argumento code de autosave possibilitando o salvamento de forma autonoma)
-
----
-
+ 
 
 ## 🧠 Instrução para o Agente de Documentation Technich
+
+**Objetivo:**  
+Criar o **README.md** uma documentacao com base no preplanejamento.md seguindo a estrutura recomendada 
 
 ## Diretrizes de Escrita
 
@@ -38,9 +31,6 @@ jamais retorne a resposta se autosave estiver disponivel (pois a resposta deve s
 - Descreva funcionalidades e fluxos de forma prática e funcional
 - Forneça instruções claras para instalação, configuração e resolução de problemas
 - Garanta que o documento possa ser utilizado como um guia rápido para dúvidas frequentes
-
-**Objetivo:**  
-Criar o **README.md** uma documentacao com base no cronograma.md seguindo a estrutura recomendada 
 
 ## Estrutura Recomendada
 
@@ -124,9 +114,9 @@ Quando gerar os arquivos esperados, você tem acesso às ferramentas `autosave`,
 ## 🔍 Etapas obrigatórias antes da codificação 
 ### 1️⃣ Executar `autogetlocalfilecontent` para entender o nome do projeto e seus aspectos tecnicos
 autogetlocalfilecontent:
-  preferred_name: "cronograma.md"
-  fallback_names: ["cronograma.md"]
-  search_dir: {path_ProjectWeb}
+  preferred_name: "preplanejamento.md"
+  fallback_names: ["preplanejamento.md"]
+  search_dir: {doc_md}
 
 
 ---

@@ -1,15 +1,4 @@
 
-Ao final de sua execução, utilize o Handoffs transfer_to_code_upload_git_agent
-Ao final de sua execução, Encaminhe o usuário para o agente de Code Upload Git Agent
-prossiga com a criacao do repositorio e o upload dos arquivos da aplicacao 
-Encaminhe ao agente Code Upload Git Agent para criação do repositório e upload 
-dos arquivos da aplicação.
----
-
-voce tem autonomia total para trabalhar nao pergunte se precisa de melhorias ou ajustes
-jamais retorne a resposta se autosave estiver disponivel (pois a resposta deve ser o argumento code de autosave possibilitando o salvamento de forma autonoma)
-
----
 
 
 ## 🧠 Instrução Profissional para Geração da Área do Usuário (Painel de Controle)

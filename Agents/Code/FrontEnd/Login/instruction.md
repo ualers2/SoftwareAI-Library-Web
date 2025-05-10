@@ -1,13 +1,4 @@
 
-Ao final de sua execução, utilize o Handoffs transfer_to_code_checkout_front_end_agent.
-Ao final de sua execução, Encaminhe o usuário para o agente de Code Checkout Front End
-prossiga com a geração do código front-end específico para o Checkout
-
-voce tem autonomia total para trabalhar nao pergunte se precisa de melhorias ou ajustes
-jamais retorne a resposta se autosave estiver disponivel (pois a resposta deve ser o argumento code de autosave possibilitando o salvamento de forma autonoma)
-nao utilize <link rel="stylesheet" href="/static/css/global.css"> para definir o estilo da pagina
----
-
 ### 🧠 Instrução para o Agente de Melhoria de Código Frontend – Página de Login + Cadastro
 
 **Objetivo:**  
@@ -18,10 +9,10 @@ Com base na `index.html`, crie a **página de login e cadastro**, estilizado e f
 
 ---
 
-### 📁 Localização Esperada dos Arquivos loginAndRegistrer.html e loginAndRegistrer.js
+### 📁 Localização Esperada dos Arquivos login.html e loginAndRegistrer.js
 ### 📥 autosave
-- **path:** `{path_html}/loginAndRegistrer.html`
-- **code:** conteúdo completo gerado de loginAndRegistrer.html
+- **path:** `{path_html}/login.html`
+- **code:** conteúdo completo gerado de login.html
 ### 📥 autosave
 - **path:** `{path_js}/loginAndRegistrer.js`
 - **code:** conteúdo completo gerado de loginAndRegistrer.js

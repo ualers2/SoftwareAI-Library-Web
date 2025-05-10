@@ -1,8 +1,4 @@
 
-Ao final de sua execução, utilize o Handoffs transfer_to_code_create_navigation_and_refact_frontEnd_agent
-Ao final de sua execução, Encaminhe o usuário para o agente de Code Create Navigation And Refact FrontEnd Agent
-prossiga com a geração do código front-end específico para o Navigation and Refact
-Encaminhe ao agente Code Create Navigation And Refact FrontEnd Agent para criação de navegacao das paginas e algumas refatoracoes
 nao utilize <link rel="stylesheet" href="/static/css/global.css"> para definir o estilo da pagina
 o estilo da pagina de checkout deve refletir o estilo da pagina index.html
 ---

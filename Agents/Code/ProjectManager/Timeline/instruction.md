@@ -101,11 +101,6 @@ Nome_Do_App/
 **Critério de conclusão:** endpoint feito 
 **Tarefas :**
 - endpoint `/api/register` que registra um novo usuario no banco de dados
-(Não deixe de fora no cronograma.md o Codigo base para que os desenvolvedores saibam de onde partir, nao omitida nada por brevidade pois pode comprometer o entendimento do desenvolvedor de onde partir )
-(o desenvolvedor que utilizará o cronograma.md precisá do Codigo base nao omita por breviedades)
-(frases como "Documentar o código base para referência dos desenvolvedores." no lugar do Codigo base é inaceitavel)
-Codigo base para o /api/register:
-{api_register}
 
 ---
 
@@ -114,11 +109,7 @@ Codigo base para o /api/register:
 **Critério de conclusão:** endpoint feito 
 **Tarefas :**
 - endpoint `/api/login` que verifica se `username` e `password` da requisição sao existentes no banco de dados para o login ser feito com sucesso
-(Não deixe de fora no cronograma.md o Codigo base para que os desenvolvedores saibam de onde partir, nao omitida nada por brevidade pois pode comprometer o entendimento do desenvolvedor de onde partir )
-(o desenvolvedor que utilizará o cronograma.md precisá do Codigo base nao omita por breviedades)
-(frases como "Documentar o código base para referência dos desenvolvedores." no lugar do Codigo base é inaceitavel)
-Codigo base para o /api/login:
-{api_login}
+
 
 ---
 
@@ -127,11 +118,7 @@ Codigo base para o /api/login:
 **Critério de conclusão:** endpoint feito 
 **Tarefas :**
 - endpoint `/api/create-checkout` que cria um checkout com os metadados `email`, `SUBSCRIPTION_PLAN` e `expiration` para o usuario na stripe 
-(Não deixe de fora no cronograma.md o Codigo base para que os desenvolvedores saibam de onde partir, nao omitida nada por brevidade pois pode comprometer o entendimento do desenvolvedor de onde partir )
-(o desenvolvedor que utilizará o cronograma.md precisá do Codigo base nao omita por breviedades)
-(frases como "Documentar o código base para referência dos desenvolvedores." no lugar do Codigo base é inaceitavel)
-Codigo base para o /api/create-checkout : 
-{createcheckout}
+
 
 ---
 
@@ -139,25 +126,14 @@ Codigo base para o /api/create-checkout :
 **Objetivo:** Integrar endpoint no arquivo ``app.py``
 **Critério de conclusão:** endpoint feito 
 **Tarefas :**
-- endpoint `/webhook` que recebe as eventos variaveis apos o usuario criar um checkout tome como base o endpoint ja validado abaixo:
-(Não deixe de fora no cronograma.md o Codigo base para que os desenvolvedores saibam de onde partir, nao omitida nada por brevidade pois pode comprometer o entendimento do desenvolvedor de onde partir )
-(o desenvolvedor que utilizará o cronograma.md precisá do Codigo base nao omita por breviedades)
-(frases como "Documentar o código base para referência dos desenvolvedores." no lugar do Codigo base é inaceitavel)
-Codigo base para o /api/webhook : 
-{code_webhook}
-
+- endpoint `/webhook` que recebe as eventos variaveis apos o usuario criar um checkout tome como base o endpoint 
 ---
 
 ### Sprint 11 (Dia 1 – Passo 11)
 **Objetivo:** Integrar Codigo base no inicio arquivo ``app.py``
 **Critério de conclusão:** Inicializacao de Chaves e configuracoes configuradas
 **Tarefas :**
-- inicializacao de configuracoes de chaves do aplicativo ja validado abaixo:
-(Não deixe de fora no cronograma.md o Codigo base para que os desenvolvedores saibam de onde partir, nao omitida nada por brevidade pois pode comprometer o entendimento do desenvolvedor de onde partir )
-(o desenvolvedor que utilizará o cronograma.md precisá do Codigo base nao omita por breviedades)
-(frases como "Documentar o código base para referência dos desenvolvedores." no lugar do Codigo base é inaceitavel)
-Codigo base para a inicializacao de configuracoes de chaves do aplicativo: 
-{settings_keys_app}
+- inicializacao de configuracoes de chaves do aplicativo 
 
 ---
 
@@ -165,12 +141,7 @@ Codigo base para a inicializacao de configuracoes de chaves do aplicativo:
 **Objetivo:** Integrar no arquivo ``Keys/fb.py`` as credenciais de banco de dados firebase do aplicativo
 **Critério de conclusão:** Credenciais de banco de dados firebase do aplicativo configuradas
 **Tarefas :**
-- Integrar no arquivo ``Keys/fb.py`` as credenciais de banco de dados firebase do aplicativo ja validado abaixo:
-(Não deixe de fora no cronograma.md o Codigo base para que os desenvolvedores saibam de onde partir, nao omitida nada por brevidade pois pode comprometer o entendimento do desenvolvedor de onde partir )
-(o desenvolvedor que utilizará o cronograma.md precisá do Codigo base nao omita por breviedades)
-(frases como "Documentar o código base para referência dos desenvolvedores." no lugar do Codigo base é inaceitavel)
-Codigo base para as credenciais de banco de dados firebase do aplicativo: 
-{user_code_init_firebase}
+- Integrar no arquivo ``Keys/fb.py`` as credenciais de banco de dados firebase do aplicativo
 
 ---
 
@@ -178,12 +149,8 @@ Codigo base para as credenciais de banco de dados firebase do aplicativo:
 **Objetivo:** Integrar no arquivo ``Keys/keys.env`` as variaveis de ambiente do aplicativo
 **Critério de conclusão:** Credenciais de banco de dados firebase do aplicativo configuradas
 **Tarefas :**
-- Integrar no arquivo ``Keys/keys.env`` as variaveis de ambiente do aplicativo ja validado abaixo:
-(Não deixe de fora no cronograma.md o Codigo base para que os desenvolvedores saibam de onde partir, nao omitida nada por brevidade pois pode comprometer o entendimento do desenvolvedor de onde partir )
-(o desenvolvedor que utilizará o cronograma.md precisá do Codigo base nao omita por breviedades)
-(frases como "Documentar o código base para referência dos desenvolvedores." no lugar do Codigo base é inaceitavel)
-Codigo base para as variaveis de ambiente do aplicativo: 
-{user_code_init_env}
+- Integrar no arquivo ``Keys/keys.env`` as variaveis de ambiente do aplicativo
+
 
 ---
 

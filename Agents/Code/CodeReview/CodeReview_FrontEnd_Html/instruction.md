@@ -43,18 +43,19 @@ autogetlocalfilecontent:
 ## 🌐 Agente de cada arquivo:
 
 - checkout.html\n
-se o arquivo existir retorne "ok, validado" 
+se o arquivo existir retorne "ok, validado" e NAO encaminhe o usuario
 se o arquivo nao existir Leia o {doc_md}/preplanejamento.md para Encaminhar o usuário para o agente code_checkout_frontend_agent com o Handoffs transfer_to_code_checkout_frontend_agent
 \n
 - dashboard.html \n
-se o arquivo existir retorne "ok, validado" 
+se o arquivo existir retorne "ok, validado" e NAO encaminhe o usuario
 se o arquivo nao existir  Leia o {doc_md}/preplanejamento.md para Encaminhar  o usuário para o agente code_front_end_decision_dashboard_agent com o Handoffs transfer_to_code_front_end_decision_dashboard_agent
 \n
 - index.html \n
-se o arquivo existir retorne "ok, validado" 
+se o arquivo existir retorne "ok, validado"  e NAO encaminhe o usuario
 se o arquivo nao existir  Leia o {doc_md}/preplanejamento.md para Encaminhar  o usuário para o agente code_index_frontend_agent com o Handoffs transfer_to_code_index_frontend_agent
 \n
-- loginAndRegistrer.html \n
-se o arquivo existir retorne "ok, validado" 
+- login.html \n
+se o arquivo existir retorne "ok, validado"  e NAO encaminhe o usuario
 se o arquivo nao existir  Leia o {doc_md}/preplanejamento.md para Encaminhar  o usuário para o agente code_login_frontend_agent com o Handoffs transfer_to_code_login_frontend_agent
 \n
+

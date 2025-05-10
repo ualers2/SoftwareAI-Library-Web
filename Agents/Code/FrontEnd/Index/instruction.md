@@ -1,16 +1,16 @@
+## 🚀 Instrução Profissional para Geração de Landing Page Com base no pre planejamento
 
-
-## 🚀 Instrução Profissional para Geração de Landing Page
-
-Prossiga com a **geração completa** de uma **Landing Page moderna, responsiva e visualmente refinada**, projetada para causar uma **excelente primeira impressão** em visitantes e potenciais clientes.
-
-voce tem autonomia total para trabalhar nao pergunte se precisa de melhorias ou ajustes
-jamais retorne a resposta se autosave estiver disponivel (pois a resposta deve ser o argumento code de autosave possibilitando o salvamento de forma autonoma)
+## 🎯 Objetivo
+Criar um **único arquivo `index.html`** com base no conteudo de preplanejamento.md contendo:
+- NÃO CRIAR LANDINPAGES QUE NAO REFLETEM O CONTEUDO DE preplanejamento.md 
+- NAO CRIAR LANDINGPAGE FORA DO QUE FOI SOLICITADO NO CONTEUDO DE preplanejamento.md 
+- Estrutura semântica e acessível com **HTML5**
+- Estilo coeso, sofisticado e leve utilizando **CSS embutido**
+- Funcionalidades interativas em **JavaScript puro**, entregando uma **experiência fluida e envolvente**
 
 ---
 
 ## 🧰 Ferramentas Disponíveis
-
 Quando gerar index.html, você tem acesso às ferramentas `autosave`, que **devem ser usadas obrigatoriamente** para o salvamento do arquivo criado
 ### 📥 autosave
 - **path:** {path_html}/index.html
@@ -19,7 +19,7 @@ Quando gerar index.html, você tem acesso às ferramentas `autosave`, que **deve
 ## 🔍 Etapas obrigatórias antes da Codificacao
 Antes de começar a escrever qualquer codigo, **você deve obrigatoriamente** executar as ferramentas na ordem abaixo:
 ### 1️⃣ Executar `autogetlocalfilecontent`  
-Para obter o conteúdo **completo** do arquivo preplanejamento para que seja possivel o desenvolvimento do index.html
+Para obter o esta previsto em ``### Componentes da Landing Page`` para que seja possivel o desenvolvimento do index.html
 autogetlocalfilecontent:
 - preferred_name: "preplanejamento.md"
 - fallback_names: ["preplanejamento.md", "planejamento.md", "plano.md"]
@@ -27,20 +27,9 @@ autogetlocalfilecontent:
 
 
 ---
-## 🎯 Objetivo
-
-Criar um **único arquivo `index.html`** contendo:
-
-- Estrutura semântica e acessível com **HTML5**
-- Estilo coeso, sofisticado e leve utilizando **CSS embutido**
-- Funcionalidades interativas em **JavaScript puro**, entregando uma **experiência fluida e envolvente**
-
----
 
 ## 🧱 Especificações Técnicas Obrigatórias
-
 ### 🔹 Arquitetura
-
 - Documento único: **HTML, CSS e JS juntos no mesmo arquivo**
 - Layout completo com seções clássicas de alta conversão:
 - `header` (navegação)
@@ -57,7 +46,6 @@ Criar um **único arquivo `index.html`** contendo:
 ---
 
 ## 🔹 Estrutura base (`index.html`)
-
 Utilize o esqueleto abaixo como base, mantendo todas as instruções:
 
 ```html

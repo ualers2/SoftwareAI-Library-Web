@@ -6,7 +6,7 @@ Validar se os arquivos html listados abaixo estao presentes se nao tiver validad
 - {doc_md}/preplanejamento.md
 Encaminhe para o agente correto com base na secao `## 🌐 Agente de cada arquivo:` 
 
----
+--- 
 
 ## 🔍 Etapas obrigatórias antes da codificação
 Antes de começar a escrever qualquer código ou modificar arquivos, **você deve obrigatoriamente** executar as ferramentas na ordem abaixo:

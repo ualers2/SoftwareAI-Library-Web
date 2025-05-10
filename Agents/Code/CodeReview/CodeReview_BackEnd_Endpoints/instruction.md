@@ -13,10 +13,10 @@ Validar se o **app.py** com contem os endpoints base listados abaixo
 - /api/login
 - /webhook
 
-se Validado tiver retorne "ok, validado" 
-se Validado nao tiver refatore o arquivo no endpoint faltante com base na secao `## 🌐 Codigo Base de cada Endpoint:` e retorne "ok, refatorado"  
----
+se os endpoints estiverem presentes NAO refatore E NAO SALVE e APENAS retorne "ok, validado" ao usuario
 
+se os endpoints NAO estiverem presentes tiver refatore e salve o arquivo no endpoint faltante com base na secao `## 🌐 Codigo Base de cada Endpoint:` e retorne "ok, refatorado"  ao usuario
+---
 
 
 ## 🔍 Etapas obrigatórias antes da codificação
@@ -27,13 +27,6 @@ autogetlocalfilecontent:
 - preferred_name: "app.py"
 - fallback_names: ["app.py"]
 - search_dir: {path_ProjectWeb}
-
----
-## 🧰 Ferramentas Disponíveis
-Caso algum dos endpoints nao forem validados, você tem acesso às ferramentas `autosave`, que **devem ser usadas obrigatoriamente** para o salvamento do arquivo app.py criado 
-### 📥 autosave
-- **path:** app.py
-- **code:** conteúdo completo gerado em app.py
 
 ---
 
@@ -65,6 +58,14 @@ Caso algum dos endpoints nao forem validados, você tem acesso às ferramentas `
 
 - /webhook\n
 {webhook}\n
+
+---
+
+## 🧰 Ferramentas Disponíveis
+Caso algum dos endpoints nao estiverem presentes, você tem acesso às ferramentas `autosave`, que **devem ser usadas obrigatoriamente** para o salvamento do arquivo app.py criado 
+### 📥 autosave
+- **path:** app.py
+- **code:** conteúdo completo gerado em app.py
 
 
 

@@ -1,0 +1,48 @@
+{
+    "type": "function",
+    "function": {
+      "name": "autobuildconteinerwithcompose",
+      "description": "Constrói uma imagem Docker e inicia um container usando o Docker SDK, aguardando até que esteja no estado 'running' ou 'healthy'.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "build_path": {
+            "type": "string",
+            "description": "Caminho para o contexto de build do Docker (ex: '.')."
+          },
+          "image_tag": {
+            "type": "string",
+            "description": "Tag a  ser atribuída à imagem (ex: 'meu-app:latest')."
+          },
+          "container_name": {
+            "type": "string",
+            "description": "Nome do container a ser criado e iniciado."
+          },
+          "run_command": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Comando (e argumentos) a ser executado dentro do container."
+          },
+          "wait_for": {
+            "type": "string",
+            "enum": ["running", "healthy"],
+            "description": "Condição para encerrar o polling: 'running' ou 'healthy'."
+          },
+          "healthcheck": {
+            "type": "boolean",
+            "description": "Se true, utiliza o healthcheck definido no Dockerfile para aguardar 'healthy'."
+          },
+          "timeout": {
+            "type": "integer",
+            "description": "Tempo máximo em segundos para aguardar a condição."
+          }
+        },
+        "required": [
+          "build_path",
+          "image_tag",
+          "container_name",
+          "run_command"
+        ]
+      }
+    }
+  }

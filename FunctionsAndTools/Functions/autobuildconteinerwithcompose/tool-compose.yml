@@ -1,0 +1,11 @@
+version: "0.1"
+
+tool_compose:
+  id: "autobuildconteinerwithcompose"
+  type_plan: free
+  icon: "fas fa-docker text-xl"
+  shortDescription: "Constrói e inicia um container Docker via Docker SDK, aguardando até o estado desejado."
+  fullDescription: "Usa o Docker SDK para Python para construir uma imagem a partir de um contexto, criar e iniciar um container em modo destacado e fazer polling até que esteja 'running' ou 'healthy', conforme parâmetros."
+  UseCases: "1. Automatizar pipelines de CI/CD que precisam garantir que o container esteja pronto antes de prosseguir.\n2. Executar containers de integração para testes automatizados e aguardar saúde do serviço.\n3. Orquestrar containers dinamicamente em scripts Python personalizados."
+    
+    

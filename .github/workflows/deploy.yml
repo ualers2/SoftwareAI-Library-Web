@@ -44,6 +44,12 @@ jobs:
         rsync -avz --delete ./ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/home/administrator/deploys/softwareailibraryhub \
           --exclude .git \
 
+    - name: Prepare VPS Keys directories
+      run: |
+        ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} " 
+          mkdir -p /home/administrator/deploys/softwareailibraryhub/Keys
+        "
+
     - name: Create keys.env on VPS
       run: |
         ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "

@@ -7,12 +7,9 @@ services:
     restart: always
     ports:
       - "821:821"
-    volumes:
-      - .:/app
-      - /var/run/docker.sock:/var/run/docker.sock  
     command: > 
       sh -c "python library_hub_app.py"
-    mem_limit: 300MB
+    mem_limit: 400MB
     cpus: "1.5"
     networks:
       - rede_externa

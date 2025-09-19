@@ -38,11 +38,12 @@ jobs:
           --exclude .git \
           --exclude front-end/node_modules
 
-    - name: Make dir on VPS
+    - name: Prepare VPS directories
       run: |
-        ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "
+        ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} " 
+          mkdir -p /home/administrator/deploys && \
+          mkdir -p /home/administrator/deploys/softwareailibraryhub && \
           mkdir -p /home/administrator/deploys/softwareailibraryhub/Keys
-         
         "
 
 

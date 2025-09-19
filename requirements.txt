@@ -45,7 +45,6 @@ typing-extensions
 reportlab
 obsws-python
 huggingface_hub
-opencv-python
 google-auth-oauthlib
 google-auth-httplib2
 pdfkit

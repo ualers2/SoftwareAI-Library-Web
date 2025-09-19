@@ -31,7 +31,7 @@ function copiarTexto(texto, botao) {
     });
 }
 async function carregarFerramentas() {
-    const resposta = await fetch('https://softwareai-library-hub.rshare.io/api/list-tools');
+    const resposta = await fetch('https://www.softwareai-library-hub.site/api/list-tools');
     const ferramentas = await resposta.json();
     window.allTools = ferramentas;
     renderTools(ferramentas);
@@ -53,7 +53,7 @@ function renderTools(tools) {
 
         const pythonCodewithApi_import_libs = `import requests\nimport yaml\nimport os\nimport json\nimport zipfile\nimport importlib`;
 
-        const pythonCodewithApi_download_tools_with_api = `def download_tools_zip(tool_ids: list, output_path: str = 'tools_code.zip', base_url: str = 'https://softwareai-library-hub.rshare.io') -> bool:\n    joined_ids = ','.join(tool_ids)\n    url = f'{base_url}/api/tool-code/{joined_ids}'\n    try:\n        response = requests.get(url)\n        if response.status_code == 200:\n            with open(output_path, 'wb') as f:\n                f.write(response.content)\n            print(f\"ZIP baixado com sucesso: {output_path}\")\n            extract_dir = os.path.join(os.path.dirname(__file__), 'Functions')\n            os.makedirs(extract_dir, exist_ok=True)\n            with zipfile.ZipFile(output_path, 'r') as zip_ref:\n                zip_ref.extractall(extract_dir)\n            print(f\"Arquivos extraídos para: {extract_dir}\")\n            return True\n        else:\n            print(f\"Erro {response.status_code}: {response.json()}\")\n            return False\n    except Exception as e:\n        print(f\"Erro durante o download ou extração: {e}\")\n        return False`;
+        const pythonCodewithApi_download_tools_with_api = `def download_tools_zip(tool_ids: list, output_path: str = 'tools_code.zip', base_url: str = 'https://www.softwareai-library-hub.site') -> bool:\n    joined_ids = ','.join(tool_ids)\n    url = f'{base_url}/api/tool-code/{joined_ids}'\n    try:\n        response = requests.get(url)\n        if response.status_code == 200:\n            with open(output_path, 'wb') as f:\n                f.write(response.content)\n            print(f\"ZIP baixado com sucesso: {output_path}\")\n            extract_dir = os.path.join(os.path.dirname(__file__), 'Functions')\n            os.makedirs(extract_dir, exist_ok=True)\n            with zipfile.ZipFile(output_path, 'r') as zip_ref:\n                zip_ref.extractall(extract_dir)\n            print(f\"Arquivos extraídos para: {extract_dir}\")\n            return True\n        else:\n            print(f\"Erro {response.status_code}: {response.json()}\")\n            return False\n    except Exception as e:\n        print(f\"Erro durante o download ou extração: {e}\")\n        return False`;
 
         const pythonCodewithApi_import_tool = `def import_tool(tool_name: str, base_dir: str = 'Functions'):\n    module_path = os.path.join(base_dir, tool_name, f\"{tool_name}.py\")\n    spec = importlib.util.spec_from_file_location(tool_name, module_path)\n    if spec and spec.loader:\n        module = importlib.util.module_from_spec(spec)\n        spec.loader.exec_module(module)\n        for attr_name in dir(module):\n            attr = getattr(module, attr_name)\n            if hasattr(attr, \"name\") and hasattr(attr, \"description\"):\n                return attr\n        raise ImportError(f\"Nenhuma função decorada com @function_tool encontrada em {tool_name}.py\")\n    else:\n        raise ImportError(f\"Não foi possível importar a ferramenta: {tool_name}\")`;
 

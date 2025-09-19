@@ -28,9 +28,9 @@ import uuid
 import base64
 import asyncio
 import secrets
-import inspect
-import hmac
-import hashlib
+import threading
+import tempfile
+import smtplib
 import unicodedata
 import subprocess
 import re
@@ -66,89 +66,6 @@ from openai.types.responses import ResponseTextDeltaEvent
 from modules.Egetoolsv2 import *
 from modules.EgetMetadataAgent import *
                   
-
-def json_load(response):
-    try:
-        json_parse = json.load(response)
-        return json_parse
-    except: 
-        try:
-            json_parse = json.loads()
-            return json_parse
-        except:
-            json_parse = response
-            return json_parse
-
-tool_outputs = []
-
-def execute_function(function_name, args):
-    global tool_outputs
-    # Recuperar os parâmetros da função dinamicamente
-    func = globals().get(function_name)
-    if func:
-        signature = inspect.signature(func)
-        # Mapear os argumentos automaticamente
-        mapped_args = {param.name: args.get(param.name, None) for param in signature.parameters.values()}
-        result = func(**mapped_args)
-        return result
-    else:
-        raise ValueError(f"Função {function_name} não encontrada")
-
-def mappingtool(function_name, function_arguments, tool_call):
-    global tool_outputs
-    
-    args = json.loads(function_arguments)
-    result = execute_function(function_name, args)
-
-    tool_outputs.append({
-        "tool_call_id": tool_call["id"],
-        "output": json.dumps(result)
-    })
-
-def submit_output(threead_id,
-                client,
-                run
-                ):
-    global tool_outputs
-    # Submit all tool outputs at once after collecting them in a list
-    if tool_outputs:
-        try:
-            run = client.beta.threads.runs.submit_tool_outputs_and_poll(
-            thread_id=threead_id,
-            run_id=run.id,
-            tool_outputs=tool_outputs
-            )
-            print("Tool outputs submitted successfully.")
-            tool_outputs = []
-            return True
-        except Exception as e:
-            print("Failed to submit tool outputs:", e)
-            try:
-                client.beta.threads.runs.submit_tool_outputs_and_poll(
-                    thread_id=threead_id,
-                    run_id=run.id,
-                    tool_outputs=tool_outputs
-                )
-                print("Tool outputs submitted successfully.")
-                tool_outputs = []
-                return True
-            except:
-                client.beta.threads.runs.submit_tool_outputs(
-                    thread_id=threead_id,
-                    run_id=run,
-                    tool_outputs=tool_outputs
-                )
-                print("Tool outputs submitted successfully.")
-                tool_outputs = []
-                return True
-    else:
-        print("No tool outputs to submit.")
-
-class Run:
-    def __init__(self, run_id):
-        self.id = run_id
-
-
 
                   
 def send_to_webhook(WEBHOOK_URL, user, type, message):

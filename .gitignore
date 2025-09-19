@@ -1,3 +1,15 @@
-Keys/appcompany.json
+Keys/
+Keys/Firebase.json
+Keys/encode_base64.py
 Keys/keys.env
+AgentsDevelp/
+AgentsWorkFlow/
 Agents/Continuous/TranscriptIssue/keys.env
+Agents/Code/ProjectManager/Timeline/instruction.md
+*.pyc
+*.env
+pull_request_body.md
+Agents/
+Agents/Code/
+Agents/Decisions/
+Agents/Continuous/

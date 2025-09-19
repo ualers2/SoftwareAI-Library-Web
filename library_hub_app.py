@@ -1,3 +1,9 @@
+# import time
+
+# while True:
+#    time.sleep(67789)
+
+
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, make_response, Response
 from flask_cors import CORS
 from datetime import timedelta
@@ -12,6 +18,9 @@ import inspect
 import zipfile
 import io
 
+from FunctionsAndTools.__init__Functions import *
+
+
 from modules.services.load_agents import load_agents_from_firebase
 from modules.modules import *
 from modules.get_agent_metadata import get_agent_metadata
@@ -19,6 +28,8 @@ from modules.calculate_tool_hash import *
 from modules.register_tool_version import *
 from modules.calculate_agent_hash import calculate_agent_hash
 from modules.register_agent_version import register_agent_version
+
+
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 CORS(app)  # Isso permite CORS para todas as rotas
@@ -28,11 +39,10 @@ app.permanent_session_lifetime = timedelta(minutes=60)
 load_dotenv(dotenv_path="Keys/keys.env")
 
 key_openai = os.getenv("OPENAI_API_KEY")
-client = OpenAI(
-    api_key=key_openai,
-)
+client = OpenAIKeysinit._init_client_(key_openai)
 
-path_APPCOMPANY = os.getenv("FIREBASE_CREDENTIALS", "/app/Keys/appcompany.json") 
+
+path_APPCOMPANY = os.getenv("FIREBASE_CREDENTIALS", "/app/Keys/Firebase.json") 
 with open(path_APPCOMPANY) as f:
     firebase_credentials_APPCOMPANY = json.load(f)
 
@@ -63,6 +73,8 @@ handler.setFormatter(formatter)
 # Evita adicionar múltiplos handlers
 if not logger.hasHandlers():
     logger.addHandler(handler)
+
+
 
 @app.context_processor
 def inject_static_url():
@@ -114,25 +126,6 @@ def get_agent(agent_id):
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-# @app.route('/api/agents/<agent_id>', methods=['GET'])
-# def get_agent(agent_id):
-#     agent_path = os.path.join(AGENTS_DIR, agent_id)
-#     info_path = os.path.join(agent_path, "info.json")
-#     tutorial_path = os.path.join(agent_path, "tutorial.md")
-
-#     if not os.path.exists(info_path):
-#         return jsonify({"error": "Agent not found"}), 404
-
-#     with open(info_path, "r", encoding="utf-8") as f:
-#         info = json.load(f)
-
-#     if os.path.exists(tutorial_path):
-#         with open(tutorial_path, "r", encoding="utf-8") as f:
-#             info["tutorial"] = f.read()
-#     else:
-#         info["tutorial"] = ""
-#     logger.info(f"agent_id {info}")
-#     return jsonify(info)
 
 @app.route('/api/agents/history', methods=['GET'])
 def get_agent_history():
@@ -169,8 +162,6 @@ def get_compose():
     with open("softwareai-compose.yml", "r", encoding="utf-8") as file:
         yaml_data = file.read()
     return Response(yaml_data, mimetype="text/yaml")
-
-
 
 @app.route('/api/agent-metadata/<agent_ids>', methods=['GET'])
 def agent_metadata(agent_ids):
@@ -215,6 +206,9 @@ def submit_tool_output_endpoint():
         run = data.get('run')
         OPENAI_API_KEY = data.get('OPENAI_API_KEY')
         
+        key_openai = OPENAI_API_KEY
+        client = OpenAIKeysinit._init_client_(key_openai)
+
         if not all([function_arguments, tool_call, thread_id, run]):
             return jsonify({'error': 'Parâmetros ausentes ou inválidos'}), 400
                 
@@ -366,8 +360,6 @@ def get_tools_by_id():
     except Exception as e:
         return jsonify({'error': f'Erro interno: {str(e)}'}), 500
 
-
-
 @app.route('/api/tool-code/<tool_ids>', methods=['GET'])
 def get_tool_codes(tool_ids):
     tool_ids_list = tool_ids.split(',')
@@ -450,6 +442,89 @@ def get_agent_codes(agent_ids):
     response.headers.set('Content-Type', 'application/zip')
     response.headers.set('Content-Disposition', 'attachment', filename='agents_code.zip')
     return response
+
+
+def json_load(response):
+    try:
+        json_parse = json.load(response)
+        return json_parse
+    except: 
+        try:
+            json_parse = json.loads()
+            return json_parse
+        except:
+            json_parse = response
+            return json_parse
+
+tool_outputs = []
+
+def execute_function(function_name, args):
+    global tool_outputs
+    # Recuperar os parâmetros da função dinamicamente
+    func = globals().get(function_name)
+    if func:
+        signature = inspect.signature(func)
+        # Mapear os argumentos automaticamente
+        mapped_args = {param.name: args.get(param.name, None) for param in signature.parameters.values()}
+        result = func(**mapped_args)
+        return result
+    else:
+        raise ValueError(f"Função {function_name} não encontrada")
+
+def mappingtool(function_name, function_arguments, tool_call):
+    global tool_outputs
+    
+    args = json.loads(function_arguments)
+    result = execute_function(function_name, args)
+
+    tool_outputs.append({
+        "tool_call_id": tool_call["id"],
+        "output": json.dumps(result)
+    })
+
+def submit_output(threead_id,
+                client,
+                run
+                ):
+    global tool_outputs
+    # Submit all tool outputs at once after collecting them in a list
+    if tool_outputs:
+        try:
+            run = client.beta.threads.runs.submit_tool_outputs_and_poll(
+            thread_id=threead_id,
+            run_id=run.id,
+            tool_outputs=tool_outputs
+            )
+            print("Tool outputs submitted successfully.")
+            tool_outputs = []
+            return True
+        except Exception as e:
+            print("Failed to submit tool outputs:", e)
+            try:
+                client.beta.threads.runs.submit_tool_outputs_and_poll(
+                    thread_id=threead_id,
+                    run_id=run.id,
+                    tool_outputs=tool_outputs
+                )
+                print("Tool outputs submitted successfully.")
+                tool_outputs = []
+                return True
+            except:
+                client.beta.threads.runs.submit_tool_outputs(
+                    thread_id=threead_id,
+                    run_id=run,
+                    tool_outputs=tool_outputs
+                )
+                print("Tool outputs submitted successfully.")
+                tool_outputs = []
+                return True
+    else:
+        print("No tool outputs to submit.")
+
+class Run:
+    def __init__(self, run_id):
+        self.id = run_id
+
 
 
 if __name__ == '__main__': # debug=True, 

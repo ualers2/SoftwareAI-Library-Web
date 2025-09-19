@@ -210,7 +210,7 @@ async function fetchAgentData(agentId) {
   const timeoutId = setTimeout(() => controller.abort(), 195000); // 15 segundos
 
   try {
-    const response = await fetch('https://softwareai-library-hub.rshare.io/api/agents', {
+    const response = await fetch('https://www.softwareai-library-hub.site/api/agents', {
       signal: controller.signal,
     });
 

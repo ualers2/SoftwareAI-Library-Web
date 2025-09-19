@@ -25,7 +25,7 @@ async function fetchAgents() {
       `;
         
   
-      const response = await fetch('https://softwareai-library-hub.rshare.io/api/agents');
+      const response = await fetch('https://www.softwareai-library-hub.site/api/agents');
       if (!response.ok) {
         throw new Error('Failed to fetch agents');
       }

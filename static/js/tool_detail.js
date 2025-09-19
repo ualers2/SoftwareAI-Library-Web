@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     const toolId = typeof TOOL_ID !== "undefined" ? TOOL_ID : null;
     console.log("toolId =", toolId);
-    const response = await fetch("https://softwareai-library-hub.rshare.io/api/list-tools");
+    const response = await fetch("https://www.softwareai-library-hub.site/api/list-tools");
     const allTools = await response.json();
     const tool = allTools.find(t => t.id === toolId);
     console.log(`tool ${tool}`);
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         document.getElementById("tool-description").textContent = `Purpose of the tool: ${tool.fullDescription}`;
 
         // Carregar metadata antes do clique
-        const metaResp = await fetch(`https://softwareai-library-hub.rshare.io/api/tool-metadata/${toolId}`);
+        const metaResp = await fetch(`https://www.softwareai-library-hub.site/api/tool-metadata/${toolId}`);
         const metadata = await metaResp.json();
         console.info(metadata);
         console.info(metadata.code);

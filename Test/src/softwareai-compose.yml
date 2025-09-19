@@ -1,0 +1,3 @@
+agent_compose:
+  tools:
+    Tools_Name: "autoapprovepullrequest,autochangesrequestedinpullrequest,autoconversationpullrequest"
